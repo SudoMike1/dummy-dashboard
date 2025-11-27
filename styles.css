@@ -36,6 +36,7 @@ h2{
     color: white;
     padding: 20px;
     margin-right: 30px;
+    padding-top: 0px;
 }
 .logo > .material-icons{
     font-size: clamp(40px, 6vw, 60px);
@@ -58,14 +59,20 @@ h2{
     font-weight: 500;
     padding: 10px 0;
 }
+.menu-item:hover{
+    background-color: rgb(30, 123, 193);
+    cursor: pointer;
+    border-radius: 10px;
+}
 .top{
     grid-area: header;
 }
 .content{
     grid-area: main;
-    background-color: #E9EEF2;
+    background-color: #e2e8ee;
 
 }
+
 
 .dot {
 height: 56px;
@@ -87,8 +94,9 @@ h4 {
     display: flex;
     align-items: center;
     gap: 15px;
-    padding: 10px 20px;
+    padding: 24px 20px;
     min-width: 0;
+
 }
 
 input[type="text"]{
@@ -157,31 +165,52 @@ p#morgan {
     font-weight: bold;
     margin: auto 40px;
 }
+button:hover{
+    cursor: pointer;
+    background-color: rgb(30, 123, 193);
+}
 
 .content {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr;
     gap: 1.5rem;
-    grid-template-areas: "projects announcements"
-                         "projects trending";
+    grid-template-areas: "projects right-part";
+                         
     
 }
 
 .card {
-    flex: 1 1 300px;
+    flex: 1 1 330px;
     background-color: white;
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 20px;
     height: 250px;
+    position: relative;
+    min-width: 195px;
 }
+.card:hover{
+    background-color: #c09c9cab;
+    cursor: pointer;
+}
+
 .card p {
     opacity: 0.7;
+    margin: 0px;
 }
 .card h4 {
     margin: 0px;
+    padding: 15px;
+    padding-left: 0px;
+}
+.card-icons {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
 }
 .projects {
     grid-area: projects;
@@ -189,11 +218,18 @@ p#morgan {
     flex-direction: column;
     
 }
-.announcements{
-    grid-area: announcements;
+.right-part {
+    grid-area: right-part;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: baseline;
 }
-.trending {
-    grid-area: trending;
+
+.trending h3#title{
+    margin-left: 0px;
+    font-size: clamp(20px, 3.2vw, 26px);
+    
 }
 .card-container{
     /* display: grid;
@@ -215,6 +251,8 @@ p#morgan {
     gap: 25px;
     width: fit-content;
     padding: 28px;
+    background-color: white;
+    
 }
 .announcements h3#title{
     margin-left: 0px;
@@ -223,10 +261,15 @@ p#morgan {
 .announcements h4 {
     margin: 10px;
     margin-left: 0px;
+    font-size: 20px;
 }
 .announcements p {
     margin: 0px;
     opacity: 0.7;
+}
+.announcements{
+    display: flex;
+    flex-direction: column;
 }
 .item {
     width: 40ch;
@@ -272,15 +315,24 @@ p#morgan {
     border-radius: 15px;
     width: fit-content;
     padding: 28px;
+    background-color: white;
 }
 .trending .item{
     display: flex;
     gap: 25px;
     align-items: center;
+    padding: 4px;
+}
+.trending .item:hover{
+    background-color: #c09c9cab;
+    cursor: pointer;
+    border-radius: 10px;
 }
 .trending .item .text p{
     margin: 8px;
+    opacity: 0.7;
 }
 #tag {
     font-weight: bold;
+    opacity: 1;
 }
